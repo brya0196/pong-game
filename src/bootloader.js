@@ -4,11 +4,15 @@ class Bootloader extends Phaser.Scene {
     }
 
     preload() {
-        console.log("Se a cargado scena boot loader");
-    }
 
-    create() {
+        this.load.on('complete', () => {
+            this.scene.start("ScenePlay");
+        });
 
+        this.load.image("ball", './assets/ball.png');
+        this.load.image("izquierda", './assets/left_pallete.png');
+        this.load.image("derecha", './assets/right_pallete.png');
+        this.load.image("separador", './assets/separator.png');
     }
 }
 
